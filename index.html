@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashem Qudah | Data Strategist & Community Leader</title>
+    <title>Hashem Qudah | Data Strategist</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -14,6 +14,7 @@
             --text-muted: #8892b0;
             --white: #ffffff;
             --bg-card: #112240;
+            --bg-hover: #172a45;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -43,17 +44,76 @@
         .btn-outline { border-color: var(--text-muted); color: var(--text-muted); }
         .btn-outline:hover { border-color: var(--secondary); color: var(--secondary); }
 
-        /* Experience Timeline Style */
-        .timeline-item { border-left: 2px solid var(--bg-card); padding-left: 30px; margin-bottom: 40px; position: relative; }
-        .timeline-item::before { content: ""; position: absolute; left: -9px; top: 5px; width: 16px; height: 16px; background: var(--secondary); border-radius: 50%; }
-        .timeline-header { margin-bottom: 10px; }
-        .timeline-date { font-family: monospace; font-size: 0.85rem; color: var(--secondary); margin-bottom: 5px; display: block; }
+        /* --- NEW EXPERIENCE DESIGN (GRID CARDS) --- */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+        }
+        
+        .exp-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 6px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-        /* Grid Layouts */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .exp-card:hover {
+            transform: translateY(-7px);
+            background: var(--bg-hover);
+            border-left: 3px solid var(--secondary);
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .exp-role {
+            font-size: 1.3rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .exp-company {
+            color: var(--secondary);
+            font-family: monospace;
+            font-size: 0.95rem;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: monospace;
+            white-space: nowrap;
+        }
+
+        .exp-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: rgba(100, 255, 218, 0.1);
+            transition: color 0.3s;
+        }
+
+        .exp-card:hover .exp-icon {
+            color: rgba(100, 255, 218, 0.2);
+        }
+
+        /* Grid Layouts for Projects */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
-        /* Cards */
+        /* Project Cards */
         .card { background: var(--bg-card); padding: 30px; border-radius: 8px; transition: transform 0.3s ease; height: 100%; }
         .card:hover { transform: translateY(-7px); box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7); }
         .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
@@ -74,6 +134,7 @@
             h1 { font-size: 2.5rem; }
             nav { justify-content: center; padding: 20px; }
             .nav-links { gap: 15px; margin-left: 0; }
+            .experience-grid { grid-template-columns: 1fr; } /* Stack cards on mobile */
         }
     </style>
 </head>
@@ -83,14 +144,12 @@
         <div class="nav-links">
             <a href="#experience">Experience</a>
             <a href="#projects">Tech Projects</a>
-            <a href="#community">Community Leadership</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <section class="hero container">
         <div>
-            <span style="color: var(--secondary); font-family: monospace; font-size: 1.1rem;">Hi, my name is</span>
             <h1>Hashem Qudah.</h1>
             <h1 style="color: var(--text-muted);">Data Strategist & Community Leader.</h1>
             <p>
@@ -109,40 +168,64 @@
     <section id="experience" class="container">
         <h2>Professional Experience</h2>
         
-        <div class="timeline-item">
-            <span class="timeline-date">Oct 2025 - Present</span>
-            <div class="timeline-header">
-                <h3>Head of Strategy & Growth</h3>
-                <span class="highlight">AiMinds Jo.</span>
+        <div class="experience-grid">
+            
+            <div class="exp-card">
+                <i class="fa-solid fa-chess-knight exp-icon"></i>
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role">Head of Strategy & Growth</div>
+                        <span class="exp-company">@ AiMinds Jo.</span>
+                    </div>
+                    <span class="exp-date">Oct 2025 - Present</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Leading strategic initiatives to democratize AI knowledge. Building partnerships, managing growth strategies, and supporting hackathons to empower the local Data Science community.
+                </p>
             </div>
-            <p>Leading strategic initiatives to democratize AI knowledge. Building partnerships, managing growth strategies, and supporting hackathons to empower the local Data Science community.</p>
-        </div>
 
-        <div class="timeline-item">
-            <span class="timeline-date">Sep 2024 - Present</span>
-            <div class="timeline-header">
-                <h3>Co-Lead (Previously Event Manager)</h3>
-                <span class="highlight">GDG on Campus - HTU</span>
+            <div class="exp-card">
+                <i class="fa-solid fa-users-gear exp-icon"></i>
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role">Co-Lead</div>
+                        <span class="exp-company">@ GDG on Campus - HTU</span>
+                    </div>
+                    <span class="exp-date">Sep 2024 - Present</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Leading a dynamic team to organize tech workshops and large-scale conferences. promoted from Event Manager after successfully managing major events like "Winterfest 2025" and "Evolve".
+                </p>
             </div>
-            <p>Leading a dynamic team to organize tech workshops and large-scale conferences. promoted from Event Manager after successfully managing major events like "Winterfest 2025" and "Evolve".</p>
-        </div>
 
-        <div class="timeline-item">
-            <span class="timeline-date">Apr 2025 - Present</span>
-            <div class="timeline-header">
-                <h3>Exam Invigilator</h3>
-                <span class="highlight">British Council</span>
+            <div class="exp-card">
+                <i class="fa-solid fa-user-shield exp-icon"></i>
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role">Exam Invigilator</div>
+                        <span class="exp-company">@ British Council</span>
+                    </div>
+                    <span class="exp-date">Apr 2025 - Present</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Ensuring fair and secure examination environments. Certified in Fraud Awareness, Child Protection, and Safety & Security.
+                </p>
             </div>
-            <p>Ensuring fair and secure examination environments. Certified in Fraud Awareness, Child Protection, and Safety & Security.</p>
-        </div>
 
-        <div class="timeline-item">
-            <span class="timeline-date">Jun 2025 - Nov 2025</span>
-            <div class="timeline-header">
-                <h3>Assistant Event Coordinator</h3>
-                <span class="highlight">Center of Professional Development (CPD) - HTU</span>
+            <div class="exp-card">
+                <i class="fa-solid fa-clipboard-list exp-icon"></i>
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role">Assistant Event Coordinator</div>
+                        <span class="exp-company">@ CPD - HTU</span>
+                    </div>
+                    <span class="exp-date">Jun 2025 - Nov 2025</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    Supported the execution of workshops for 154 graduates. Managed schedules, attendance tracking using Excel, and logistics for the ICT Upskilling Program.
+                </p>
             </div>
-            <p>Supported the execution of workshops for 154 graduates. Managed schedules, attendance tracking using Excel, and logistics for the ICT Upskilling Program.</p>
+
         </div>
     </section>
 
@@ -198,45 +281,6 @@
         </div>
     </section>
 
-    <section id="community" class="container">
-        <h2>Event Management & Leadership</h2>
-        <div class="grid-2">
-            
-            <div class="card">
-                <h3>🚀 Evolve 2025</h3>
-                <p style="color: var(--secondary); font-size: 0.85rem; margin-bottom: 10px;">Head of Volunteering</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Led the volunteering team for one of the biggest student-led tech conferences at HTU. Managed logistics, team coordination, and on-ground operations.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🔐 Winterfest 2025</h3>
-                <p style="color: var(--secondary); font-size: 0.85rem; margin-bottom: 10px;">Event Manager</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Managed the Ethical Hacking & Cybersecurity Bootcamp. Oversaw instructor coordination and participant engagement for a successful technical bootcamp.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🔢 HTU Math Marathon</h3>
-                <p style="color: var(--secondary); font-size: 0.85rem; margin-bottom: 10px;">Event Manager</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Managed both Round 1 & 2. Organized teams to develop interactive math projects (apps/games) and coordinated the award ceremony with university leadership.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🎤 Speaker & Presenter</h3>
-                <p style="color: var(--secondary); font-size: 0.85rem; margin-bottom: 10px;">National Tech Parade & Tawasal</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Presented on "E-learning Technology" and Google Cloud Skills at the 12th National Technology Parade. Participated in the Tawasal Forum 2025 discussions on AI.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
     <section class="container">
         <div class="grid-2">
             <div>
@@ -265,13 +309,16 @@
         </p>
         
         <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
-            <a href="mailto:hashemqud03@gmail.com" class="btn">Say Hello</a>
+            
+            <a href="mailto:hashemqud03@gmail.com" style="font-size: 1.2rem; color: var(--secondary); text-decoration: none; font-weight: 600;">
+                hashemqud03@gmail.com
+            </a>
 
-            <div style="margin-top: 10px; color: var(--text-light); font-family: monospace; font-size: 1.1rem;">
+            <div style="color: var(--text-light); font-family: monospace; font-size: 1.1rem;">
                 <span style="color: var(--secondary);">📞</span> 0772250050
             </div>
 
-            <a href="https://www.linkedin.com/in/hashem-qudah-1b70a5300/" target="_blank" style="color: var(--secondary); text-decoration: none; border-bottom: 1px dashed var(--secondary); padding-bottom: 2px;">
+            <a href="https://www.linkedin.com/in/hashem-qudah-1b70a5300/" target="_blank" style="color: var(--text-muted); text-decoration: none; border-bottom: 1px dashed var(--secondary); padding-bottom: 2px; font-size: 0.9rem;">
                 Connect on LinkedIn ↗
             </a>
         </div>
