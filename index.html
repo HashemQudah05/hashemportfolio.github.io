@@ -36,12 +36,12 @@
         .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: color 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
 
-        /* Hero Section */
+        /* Hero Section with Image */
         .hero { min-height: 85vh; display: flex; align-items: center; }
         .hero-content { max-width: 800px; }
         .hero p { font-size: 1.1rem; max-width: 650px; margin-bottom: 30px; color: var(--text-muted); }
         
-        /* Profile Image */
+        /* Profile Image Style */
         .profile-img {
             width: 160px;
             height: 160px;
@@ -66,12 +66,13 @@
         }
         .about-text { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
 
-        /* Experience Grid */
+        /* Experience Grid System */
         .experience-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 25px;
         }
+        
         .exp-card {
             background: var(--bg-card);
             padding: 30px;
@@ -81,40 +82,92 @@
             position: relative;
             overflow: hidden;
         }
+
         .exp-card:hover {
             transform: translateY(-7px);
             background: var(--bg-hover);
             border-left: 3px solid var(--secondary);
             box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
         }
-        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-        .exp-role { font-size: 1.3rem; color: var(--white); font-weight: 600; }
-        .exp-company { color: var(--secondary); font-family: monospace; font-size: 0.95rem; margin-top: 5px; display: block; }
-        .exp-date { font-size: 0.85rem; color: var(--text-muted); font-family: monospace; white-space: nowrap; }
-        .exp-icon { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: rgba(100, 255, 218, 0.1); transition: color 0.3s; }
-        .exp-card:hover .exp-icon { color: rgba(100, 255, 218, 0.2); }
 
-        /* Projects Grid */
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .exp-role {
+            font-size: 1.3rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .exp-company {
+            color: var(--secondary);
+            font-family: monospace;
+            font-size: 0.95rem;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: monospace;
+            white-space: nowrap;
+        }
+
+        .exp-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: rgba(100, 255, 218, 0.1);
+            transition: color 0.3s;
+        }
+
+        .exp-card:hover .exp-icon {
+            color: rgba(100, 255, 218, 0.2);
+        }
+
+        /* Grid Layouts for Projects */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        /* Project Cards */
         .card { background: var(--bg-card); padding: 30px; border-radius: 8px; transition: transform 0.3s ease; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { transform: translateY(-7px); box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7); }
         .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        
+        /* Tags */
         .tech-stack { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
         .tech-tag { font-family: monospace; font-size: 0.75rem; color: var(--secondary); background: rgba(100, 255, 218, 0.05); padding: 5px 10px; border-radius: 4px; }
 
-        /* --- NEW SKILLS & CERTS DESIGN --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
+        /* Skills Badges Design (New & Improved) */
+        .skills-wrapper {
+            margin-top: 30px;
+        }
+        
+        .skill-category {
+            margin-bottom: 30px;
         }
 
-        /* Skill Badges */
+        .skill-category h4 {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-family: monospace;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
         .skill-container {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
         }
+
         .skill-badge {
             background: var(--bg-card);
             color: var(--text-light);
@@ -124,47 +177,16 @@
             border: 1px solid rgba(100, 255, 218, 0.1);
             transition: all 0.3s ease;
             cursor: default;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
         .skill-badge:hover {
             border-color: var(--secondary);
             color: var(--secondary);
             transform: translateY(-3px);
             background: rgba(100, 255, 218, 0.05);
-        }
-        .skill-badge i { margin-right: 8px; }
-
-        /* Cert Items (Mini Cards) */
-        .cert-item {
-            background: var(--bg-card);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            border-left: 4px solid var(--text-muted);
-            transition: all 0.3s ease;
-        }
-        .cert-item:hover {
-            border-left-color: var(--secondary);
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .cert-icon {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-right: 20px;
-            min-width: 30px;
-            text-align: center;
-        }
-        .cert-text h4 {
-            color: var(--white);
-            margin-bottom: 5px;
-            font-size: 1rem;
-        }
-        .cert-text span {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-family: monospace;
         }
 
         /* Footer */
@@ -174,16 +196,17 @@
             h1 { font-size: 2.5rem; }
             nav { justify-content: center; padding: 20px; }
             .nav-links { gap: 15px; margin-left: 0; }
-            .experience-grid, .skills-grid { grid-template-columns: 1fr; } 
+            .experience-grid, .grid-3 { grid-template-columns: 1fr; } 
         }
 
-        /* Contact Items */
+        /* Unified Contact Styling */
         .contact-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
         }
+
         .contact-item {
             display: flex;
             align-items: center;
@@ -196,10 +219,12 @@
             transition: all 0.3s ease;
             padding: 5px 10px;
         }
+
         .contact-item i {
             color: var(--secondary);
             font-size: 1.4rem;
         }
+
         .contact-item:hover {
             color: var(--secondary);
             transform: translateY(-3px);
@@ -213,7 +238,7 @@
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
-            <a href="#skills">Skills & Certs</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -221,12 +246,14 @@
     <section class="hero container">
         <div class="hero-content">
             <img src="profile.jpg" alt="Hashem Qudah" class="profile-img">
+
             <h1>Hashem Qudah.</h1>
             <h1 style="color: var(--text-muted);">Data Strategist & Community Leader.</h1>
             <p>
                 B.Sc. in Data Science & AI at <strong>HTU</strong>. 
                 I bridge the gap between technical data solutions and strategic growth. 
-                Currently serving as <strong>Head of Strategy at AiMinds Jo</strong> and <strong>Co-Lead at GDG-HTU</strong>.
+                Currently serving as <strong>Head of Strategy at AiMinds Jo</strong> and <strong>Co-Lead at GDG-HTU</strong>, 
+                driving innovation and digital transformation in the Jordanian tech ecosystem.
             </p>
             <div style="margin-top: 30px;">
                 <a href="#contact" class="btn">Get In Touch</a>
@@ -256,6 +283,7 @@
 
     <section id="experience" class="container">
         <h2>Professional Experience</h2>
+        
         <div class="experience-grid">
             <div class="exp-card">
                 <i class="fa-solid fa-chess-knight exp-icon"></i>
@@ -267,9 +295,10 @@
                     <span class="exp-date">Oct 2025 - Present</span>
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Leading strategic initiatives to democratize AI knowledge. Building partnerships, managing growth strategies, and supporting hackathons.
+                    Leading strategic initiatives to democratize AI knowledge. Building partnerships, managing growth strategies, and supporting hackathons to empower the local Data Science community.
                 </p>
             </div>
+
             <div class="exp-card">
                 <i class="fa-solid fa-users-gear exp-icon"></i>
                 <div class="exp-header">
@@ -280,9 +309,10 @@
                     <span class="exp-date">Sep 2024 - Present</span>
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Leading a dynamic team to organize tech workshops. Promoted from Event Manager after successfully managing "Winterfest 2025" and "Evolve".
+                    Leading a dynamic team to organize tech workshops and large-scale conferences. Promoted from Event Manager after successfully managing major events like "Winterfest 2025" and "Evolve".
                 </p>
             </div>
+
             <div class="exp-card">
                 <i class="fa-solid fa-user-shield exp-icon"></i>
                 <div class="exp-header">
@@ -293,9 +323,10 @@
                     <span class="exp-date">Apr 2025 - Present</span>
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Ensuring fair and secure examination environments. Certified in Fraud Awareness and Child Protection.
+                    Ensuring fair and secure examination environments. Certified in Fraud Awareness, Child Protection, and Safety & Security.
                 </p>
             </div>
+
             <div class="exp-card">
                 <i class="fa-solid fa-clipboard-list exp-icon"></i>
                 <div class="exp-header">
@@ -306,7 +337,7 @@
                     <span class="exp-date">Jun 2025 - Nov 2025</span>
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Supported execution of workshops for 154 graduates. Managed schedules and logistics for the ICT Upskilling Program.
+                    Supported the execution of workshops for 154 graduates. Managed schedules, attendance tracking using Excel, and logistics for the ICT Upskilling Program.
                 </p>
             </div>
         </div>
@@ -367,7 +398,7 @@
                 </div>
                 <h3>Autonomous Line-Following Robot</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Designed for HTU’s STEM Expo. A robot capable of navigating complex tracks using IR sensors and microcontroller logic. Awarded <strong>Distinction (Grade D)</strong>.
+                    Designed for HTU’s STEM Expo. A robot capable of navigating complex tracks using IR sensors and microcontroller logic. Awarded <strong>Distinction (Grade D)</strong> for technical design.
                 </p>
                 <div class="tech-stack">
                     <span class="tech-tag">C++</span>
@@ -382,7 +413,7 @@
                 </div>
                 <h3>Data Cleansing Pipeline</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    End-to-end data cleaning project investigating technology's impact on children. Handled missing data imputation (Mode/Mean) and outlier detection using Boxplots.
+                    End-to-end data cleaning project investigating technology's impact on children. Handled missing data imputation (Mode/Mean) and outlier detection using Boxplots and Z-scores.
                 </p>
                 <div class="tech-stack">
                     <span class="tech-tag">Pandas</span>
@@ -410,77 +441,51 @@
     </section>
 
     <section id="skills" class="container">
-        <h2>Skills & Integrity</h2>
-        <div class="skills-grid">
+        <h2>Technical Skills</h2>
+        <div class="skills-wrapper">
             
-            <div>
-                <h3 style="margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-code highlight"></i> Technical Arsenal
-                </h3>
+            <div class="skill-category">
+                <h4>Data Science & AI</h4>
                 <div class="skill-container">
-                    <div class="skill-badge"><i class="fa-brands fa-python"></i> Python (Pandas/Numpy)</div>
-                    <div class="skill-badge"><i class="fa-solid fa-database"></i> SQL</div>
-                    <div class="skill-badge"><i class="fa-solid fa-microchip"></i> C++ & Arduino</div>
-                    <div class="skill-badge"><i class="fa-solid fa-file-excel"></i> MS Excel (Advanced)</div>
-                    <div class="skill-badge"><i class="fa-solid fa-video"></i> AI Video Creation</div>
+                    <div class="skill-badge"><i class="fa-brands fa-python"></i> Python (Pandas/NumPy/Seaborn)</div>
                     <div class="skill-badge"><i class="fa-solid fa-brain"></i> Machine Learning</div>
-                    <div class="skill-badge"><i class="fa-solid fa-users-viewfinder"></i> Data Strategy</div>
-                </div>
-                
-                <h3 style="margin-top: 40px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-certificate highlight"></i> Certifications
-                </h3>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div class="cert-text">
-                        <h4>Data Manipulation & Intermediate Python</h4>
-                        <span>DataCamp</span>
-                    </div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <div class="cert-text">
-                        <h4>AI Video Creation Workshop</h4>
-                        <span>Crown Prince Foundation</span>
-                    </div>
+                    <div class="skill-badge"><i class="fa-solid fa-database"></i> SQL</div>
+                    <div class="skill-badge"><i class="fa-solid fa-chart-line"></i> Predictive Modeling</div>
+                    <div class="skill-badge"><i class="fa-solid fa-filter"></i> Data Cleaning & Manipulation</div>
+                    <div class="skill-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> Feature Engineering</div>
+                    <div class="skill-badge"><i class="fa-solid fa-video"></i> AI Video Production</div>
                 </div>
             </div>
 
-            <div>
-                <h3 style="margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-scale-balanced highlight"></i> Professional Integrity
-                </h3>
-                
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fa-solid fa-user-shield"></i></div>
-                    <div class="cert-text">
-                        <h4>Fraud Awareness & Risk Management</h4>
-                        <span>British Council</span>
-                    </div>
+            <div class="skill-category">
+                <h4>Strategy & Business</h4>
+                <div class="skill-container">
+                    <div class="skill-badge"><i class="fa-solid fa-chess"></i> Strategic Planning</div>
+                    <div class="skill-badge"><i class="fa-solid fa-hand-holding-dollar"></i> Fundraising & Investor Pitching</div>
+                    <div class="skill-badge"><i class="fa-solid fa-bullhorn"></i> Storytelling & Pitch Decks</div>
+                    <div class="skill-badge"><i class="fa-solid fa-chart-pie"></i> Quantitative Research</div>
+                    <div class="skill-badge"><i class="fa-solid fa-comments"></i> Strategic Communications</div>
                 </div>
+            </div>
 
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fa-solid fa-child-reaching"></i></div>
-                    <div class="cert-text">
-                        <h4>Child Protection & Safeguarding</h4>
-                        <span>British Council</span>
-                    </div>
+            <div class="skill-category">
+                <h4>Engineering & Tools</h4>
+                <div class="skill-container">
+                    <div class="skill-badge"><i class="fa-solid fa-microchip"></i> C++ & Arduino IDE</div>
+                    <div class="skill-badge"><i class="fa-solid fa-robot"></i> Robotics</div>
+                    <div class="skill-badge"><i class="fa-solid fa-file-excel"></i> MS Excel</div>
+                    <div class="skill-badge"><i class="fa-solid fa-pen-nib"></i> Canva</div>
                 </div>
+            </div>
 
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
-                    <div class="cert-text">
-                        <h4>Certificate of Appreciation (67 Vol. Hours)</h4>
-                        <span>Al Hussein Technical University (HTU)</span>
-                    </div>
-                </div>
-
-                <div class="cert-item">
-                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
-                    <div class="cert-text">
-                        <h4>Distinction (Grade D) - Robotics</h4>
-                        <span>HTU School of Engineering Tech (STEM Expo)</span>
-                    </div>
+            <div class="skill-category">
+                <h4>Leadership & Soft Skills</h4>
+                <div class="skill-container">
+                    <div class="skill-badge"><i class="fa-solid fa-users"></i> Team Leadership & Coordination</div>
+                    <div class="skill-badge"><i class="fa-solid fa-calendar-check"></i> Event Management</div>
+                    <div class="skill-badge"><i class="fa-solid fa-lightbulb"></i> Critical Thinking & Problem Solving</div>
+                    <div class="skill-badge"><i class="fa-solid fa-handshake"></i> Negotiation & Communication</div>
+                    <div class="skill-badge"><i class="fa-solid fa-clock"></i> Time Management</div>
                 </div>
             </div>
 
@@ -497,9 +502,11 @@
             <a href="mailto:hashemqud03@gmail.com" class="contact-item">
                 <i class="fa-solid fa-envelope"></i> hashemqud03@gmail.com
             </a>
+
             <a href="tel:0772250050" class="contact-item">
                 <i class="fa-solid fa-phone"></i> 0772250050
             </a>
+
             <a href="https://www.linkedin.com/in/hashem-qudah-1b70a5300/" target="_blank" class="contact-item">
                 <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn ↗
             </a>
