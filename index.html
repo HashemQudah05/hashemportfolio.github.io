@@ -36,9 +36,22 @@
         .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: color 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
 
-        /* Hero Section */
+        /* Hero Section with Image */
         .hero { min-height: 85vh; display: flex; align-items: center; }
+        .hero-content { max-width: 800px; }
         .hero p { font-size: 1.1rem; max-width: 650px; margin-bottom: 30px; color: var(--text-muted); }
+        
+        /* Profile Image Style */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid var(--secondary);
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
+        }
+
         .btn { display: inline-block; padding: 12px 28px; border: 2px solid var(--secondary); color: var(--secondary); text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; margin-right: 15px; }
         .btn:hover { background: rgba(100, 255, 218, 0.1); }
         .btn-outline { border-color: var(--text-muted); color: var(--text-muted); }
@@ -119,11 +132,10 @@
         }
 
         /* Grid Layouts for Projects */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
         /* Project Cards */
-        .card { background: var(--bg-card); padding: 30px; border-radius: 8px; transition: transform 0.3s ease; height: 100%; }
+        .card { background: var(--bg-card); padding: 30px; border-radius: 8px; transition: transform 0.3s ease; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { transform: translateY(-7px); box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7); }
         .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
         
@@ -158,17 +170,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px; /* Space between icon and text */
+            gap: 15px; 
             font-size: 1.3rem; 
             font-weight: 600; 
             text-decoration: none;
-            color: var(--text-light); /* Unified Text Color */
+            color: var(--text-light); 
             transition: all 0.3s ease;
             padding: 5px 10px;
         }
 
         .contact-item i {
-            color: var(--secondary); /* Unified Icon Color */
+            color: var(--secondary);
             font-size: 1.4rem;
         }
 
@@ -190,7 +202,10 @@
     </nav>
 
     <section class="hero container">
-        <div>
+        <div class="hero-content">
+            
+            <img src="profile.jpg" alt="Hashem Qudah" class="profile-img">
+
             <h1>Hashem Qudah.</h1>
             <h1 style="color: var(--text-muted);">Data Strategist & Community Leader.</h1>
             <p>
@@ -295,46 +310,91 @@
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fa-regular fa-folder fa-2x highlight"></i>
+                    <i class="fa-solid fa-chart-line fa-2x highlight"></i>
                 </div>
-                <h3>PwC Compliance Tool</h3>
+                <h3>Sales Optimization & Forecasting</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Developed for <strong>PwC Jordan</strong>. An NLP-powered tool that automates data cleaning and compliance auditing, reducing manual verification time for financial reporting.
+                    Comparative analysis of predictive models (Decision Tree vs. LSTM) and prescriptive analytics using <strong>Genetic Algorithms</strong> vs Linear Programming to optimize pricing strategies.
                 </p>
                 <div class="tech-stack">
-                    <span class="tech-tag">NLP</span>
-                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Genetic Algorithms</span>
+                    <span class="tech-tag">LSTM</span>
                     <span class="tech-tag">Python</span>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fa-solid fa-cloud fa-2x highlight"></i>
+                    <i class="fa-regular fa-folder fa-2x highlight"></i>
                 </div>
-                <h3>H.A.I.E. Prediction Model</h3>
+                <h3>PwC AI Cleaning Tool</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Hakeem Academy AI Challenge 2025 Project. A predictive model deployed on Azure to identify risks of Hospital-Acquired Infections using patient vitals and environmental data.
+                    Strategic planning for an AI tool to automate compliance workflows. Features <strong>Arabic NLP</strong>, ISO 27001 compliance, and integration with PwC's Aura & Halo systems.
                 </p>
                 <div class="tech-stack">
-                    <span class="tech-tag">Azure</span>
-                    <span class="tech-tag">Scikit-Learn</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">ISO 27001</span>
+                    <span class="tech-tag">Agile</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-notes-medical fa-2x highlight"></i>
+                </div>
+                <h3>H.A.I.E. Infection Prediction</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Implemented a full Data Science Lifecycle to predict hospital-acquired infections. Utilized <strong>Google Cloud</strong> and GPU acceleration for processing large healthcare datasets.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Google Cloud</span>
+                    <span class="tech-tag">SQL</span>
                     <span class="tech-tag">Healthcare AI</span>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fa-solid fa-chart-line fa-2x highlight"></i>
+                    <i class="fa-solid fa-robot fa-2x highlight"></i>
                 </div>
-                <h3>Sales Optimization Engine</h3>
+                <h3>Autonomous Line-Following Robot</h3>
                 <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Prescriptive analytics project analyzing churn patterns and recommending inventory adjustments. Used statistical modeling to maximize ROI.
+                    Designed for HTU’s STEM Expo. A robot capable of navigating complex tracks using IR sensors and microcontroller logic. Awarded <strong>Distinction (Grade D)</strong> for technical design.
                 </p>
                 <div class="tech-stack">
-                    <span class="tech-tag">Data Vis</span>
-                    <span class="tech-tag">Optimization</span>
-                    <span class="tech-tag">Analytics</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Robotics</span>
+                    <span class="tech-tag">Embedded Systems</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-laptop-code fa-2x highlight"></i>
+                </div>
+                <h3>Data Cleansing Pipeline</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    End-to-end data cleaning project investigating technology's impact on children. Handled missing data imputation (Mode/Mean) and outlier detection using Boxplots and Z-scores.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Seaborn</span>
+                    <span class="tech-tag">Data Wrangling</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa-solid fa-school fa-2x highlight"></i>
+                </div>
+                <h3>Educational Performance Analytics</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Descriptive analytics on 1000 student records. Identified correlations between parental education and math scores, and gender performance gaps in reading vs. math.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Descriptive Stats</span>
+                    <span class="tech-tag">Visualization</span>
+                    <span class="tech-tag">EDA</span>
                 </div>
             </div>
 
