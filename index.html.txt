@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashem Qudah | Data Science & AI Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f; /* Deep Navy */
+            --secondary: #64ffda; /* Teal/Cyan Accent */
+            --text-light: #ccd6f6;
+            --text-muted: #8892b0;
+            --white: #ffffff;
+            --bg-card: #112240;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--primary); color: var(--text-light); line-height: 1.6; }
+
+        /* Typography */
+        h1, h2, h3 { color: var(--white); font-weight: 700; }
+        h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 20px; }
+        h2 { font-size: 2rem; margin-bottom: 30px; position: relative; display: inline-block; }
+        h2::after { content: ""; position: absolute; bottom: -10px; left: 0; width: 60px; height: 4px; background: var(--secondary); border-radius: 2px; }
+        .highlight { color: var(--secondary); }
+
+        /* Layout Utilities */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 50px; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--secondary); }
+        .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--secondary); }
+
+        /* Hero Section */
+        .hero { min-height: 80vh; display: flex; align-items: center; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; color: var(--text-muted); }
+        .btn { display: inline-block; padding: 12px 28px; border: 2px solid var(--secondary); color: var(--secondary); text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .btn:hover { background: rgba(100, 255, 218, 0.1); }
+
+        /* About & Leadership */
+        .leadership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .role-card { background: var(--bg-card); padding: 25px; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .role-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .role-card span { font-size: 0.85rem; color: var(--secondary); font-family: monospace; }
+
+        /* Projects Section */
+        .project-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .project-card { background: var(--bg-card); padding: 40px; border-radius: 10px; transition: transform 0.3s ease; position: relative; }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+        .tech-stack { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .tech-tag { font-family: monospace; font-size: 0.8rem; color: var(--secondary); }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            nav { padding: 20px; flex-direction: column; gap: 15px; }
+            .nav-links { display: flex; gap: 20px; margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">HQ.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero container">
+        <div>
+            <span style="color: var(--secondary); font-family: monospace; font-size: 1.1rem;">Hi, my name is</span>
+            <h1>Hashem Qudah.</h1>
+            <h1 style="color: var(--text-muted);">I turn data into decisions.</h1>
+            <p>
+                Data Science & AI Student at <strong>Al Hussein Technical University (HTU)</strong>. 
+                Specializing in building deployable Machine Learning models, NLP systems, and prescriptive analytics that solve real-world business problems.
+            </p>
+            <a href="#projects" class="btn">Check out my work</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>Leadership & Impact</h2>
+        <p style="max-width: 700px; margin-bottom: 30px; color: var(--text-muted);">
+            Beyond the code, I am committed to driving technical excellence and social impact within the Jordanian tech ecosystem.
+        </p>
+        <div class="leadership-grid">
+            <div class="role-card">
+                <h3>Co-Lead</h3>
+                <span>GDG-HTU (Google Developer Groups)</span>
+                <p style="margin-top: 10px; font-size: 0.95rem;">
+                    Leading a community of developers, organizing technical workshops, and fostering a culture of innovation on campus.
+                </p>
+            </div>
+            <div class="role-card">
+                <h3>Head of Strategy</h3>
+                <span>AiMinds Jo</span>
+                <p style="margin-top: 10px; font-size: 0.95rem;">
+                    Directing strategic initiatives to democratize AI knowledge and connect local talent with global opportunities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>AI-Powered Data Cleaning Tool</h3>
+                    <span style="color: var(--secondary);">📍 Developed for PwC Jordan</span>
+                </div>
+                <p style="color: var(--text-muted);">
+                    Designed to automate compliance workflows. This tool leverages Natural Language Processing (NLP) to parse, clean, and standardize messy corporate data, significantly reducing manual auditing time and enhancing data integrity for financial reporting.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Regex</span>
+                    <span class="tech-tag">Compliance Automation</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>H.A.I.E. (Healthcare AI Model)</h3>
+                    <span style="color: var(--secondary);">☁️ Azure Deployed</span>
+                </div>
+                <p style="color: var(--text-muted);">
+                    A predictive model designed to identify risks of Hospital-Acquired Infections. By analyzing patient vitals and environmental data, the model provides early warnings to medical staff. Fully deployed and scalable via Microsoft Azure cloud infrastructure.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Microsoft Azure</span>
+                    <span class="tech-tag">Scikit-Learn</span>
+                    <span class="tech-tag">Healthcare Analytics</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Sales Data Optimization Engine</h3>
+                </div>
+                <p style="color: var(--text-muted);">
+                    Moving beyond simple analysis to prescriptive analytics. This project analyzed historical sales data to identify churn patterns and utilized optimization algorithms to recommend specific inventory adjustments and pricing strategies for maximum ROI.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Predictive Analytics</span>
+                    <span class="tech-tag">Data Visualization</span>
+                    <span class="tech-tag">Statistical Modeling</span>
+                    <span class="tech-tag">Business Intelligence</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="container" style="text-align: center; max-width: 600px;">
+        <h2>Get In Touch</h2>
+        <p style="color: var(--text-muted); margin: 20px 0 40px;">
+            Whether you have a question about my research, want to discuss a potential collaboration, or just want to say hi, my inbox is always open.
+        </p>
+        <a href="mailto:hashem@example.com" class="btn">Say Hello</a>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Hashem Qudah © 2025</p>
+    </footer>
+
+</body>
+</html>
