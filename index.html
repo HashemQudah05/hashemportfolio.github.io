@@ -44,6 +44,15 @@
         .btn-outline { border-color: var(--text-muted); color: var(--text-muted); }
         .btn-outline:hover { border-color: var(--secondary); color: var(--secondary); }
 
+        /* About Section (NEW) */
+        .about-content {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 8px;
+            border-right: 4px solid var(--secondary);
+        }
+        .about-text { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
+
         /* Experience Grid System */
         .experience-grid {
             display: grid;
@@ -142,8 +151,9 @@
 
     <nav>
         <div class="nav-links">
+            <a href="#about">About</a>
             <a href="#experience">Experience</a>
-            <a href="#projects">Tech Projects</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -162,6 +172,25 @@
                 <a href="#contact" class="btn">Get In Touch</a>
                 <a href="#projects" class="btn btn-outline">View Portfolio</a>
             </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p class="about-text">
+                I am a Data Science undergraduate driven by the intersection of technology and community impact. 
+                My journey is defined by a commitment to leadership and service. From serving as the <strong>Head of Volunteering for Evolve 2025</strong>
+                to managing large-scale events like the <strong>HTU Math Marathon</strong> and <strong>Winterfest 2025</strong>, 
+                I thrive in environments that require strategic thinking and operational excellence.
+            </p>
+            <p class="about-text">
+                Beyond the tech ecosystem, I have dedicated over 60 hours to volunteering, including roles at the <strong>Children's Museum Jordan</strong> 
+                and as an Usher at university conferences. My role as an <strong>Exam Invigilator at the British Council</strong> further reflects my dedication to professional integrity and responsibility.
+            </p>
+            <p class="about-text" style="color: var(--secondary); margin-bottom: 0;">
+                <i class="fa-solid fa-quote-left"></i> I believe that true innovation happens when we empower others to succeed.
+            </p>
         </div>
     </section>
 
