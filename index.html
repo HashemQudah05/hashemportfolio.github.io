@@ -23,7 +23,7 @@
         /* Typography */
         h1, h2, h3, h4 { color: var(--white); font-weight: 700; margin-bottom: 10px; }
         h1 { font-size: 3rem; letter-spacing: -1px; margin-bottom: 15px; }
-        h2 { font-size: 2rem; margin-bottom: 30px; position: relative; display: inline-block; }
+        h2 { font-size: 2rem; margin-bottom: 40px; position: relative; display: inline-block; }
         h2::after { content: ""; position: absolute; bottom: -8px; left: 0; width: 50px; height: 4px; background: var(--secondary); border-radius: 2px; }
         .highlight { color: var(--secondary); }
         
@@ -58,8 +58,9 @@
 
         /* Reference Specific */
         .ref-card { border-left: 4px solid var(--secondary); border-bottom: none; }
-        .ref-contact { margin-top: 15px; font-size: 0.95rem; color: var(--text-muted); }
-        .ref-contact i { width: 25px; color: var(--secondary); }
+        .ref-contact { margin-top: 15px; font-size: 0.9rem; color: var(--text-muted); }
+        .ref-contact i { width: 20px; color: var(--secondary); margin-right: 5px; }
+        .quote-icon { color: var(--secondary); font-size: 1.5rem; margin-bottom: 15px; opacity: 0.5; }
 
         /* Contact */
         .contact-item { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.3rem; color: var(--text-light); text-decoration: none; margin: 12px 0; transition: color 0.3s; }
@@ -80,7 +81,7 @@
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#references">References</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -191,7 +192,7 @@
     </section>
 
     <section id="projects" class="container">
-        <h2>Featured Projects</h2>
+        <h2>Educational Projects</h2>
         <div class="grid-2">
 
             <div class="card">
@@ -267,34 +268,76 @@
         </div>
     </section>
 
+    <section id="testimonials" class="container">
+        <h2>Recommendations & Testimonials</h2>
+        <div class="grid-2">
+            
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
+                    "Hashem demonstrated exceptional creativity and technical skills... He has successfully balanced his solid academic record with leadership responsibilities."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Dr. Mariam Biltawi</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Dean of Student Affairs, HTU</span>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
+                    "Disciplined, focused, and responsible student. He has demonstrated strong leadership qualities... calm yet attentive, actively engaging in class exercises."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Ms. Noura Al-Nashef</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Instructor, HTU</span>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
+                    "Highly dedicated student who can work both individually and in teams... showed high level of care and interest in his individual assignment."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Ms. Batool Alarmouti</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
+                    "Highly responsible and focused individual who consistently meets deadlines... stand out as a reliable and hardworking student."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Ms. Waed Alsawareah</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
+            </div>
+
+        </div>
+    </section>
+
     <section id="references" class="container">
         <h2>References</h2>
         <div class="grid-2">
             <div class="card ref-card">
-                <h3 style="margin-bottom: 5px;">Ms. Noura AlNashef</h3>
-                <p style="color: var(--secondary); font-weight: 500;">Instructor at Al-Hussein Technical University</p>
+                <h4 style="margin-bottom: 5px;">Dr. Mariam Biltawi</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Dean of Student Affairs at HTU</p>
                 <div class="ref-contact">
-                    <p style="margin-bottom: 8px;">
-                        <i class="fa-solid fa-envelope"></i> 
-                        <a href="mailto:noura.alnashef@htu.edu.jo" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-muted);">noura.alnashef@htu.edu.jo</a>
-                    </p>
+                    <p><i class="fa-solid fa-envelope"></i> Mariam.Biltawi@htu.edu.jo</p>
+                </div>
+            </div>
+
+            <div class="card ref-card">
+                <h4 style="margin-bottom: 5px;">Ms. Noura Al-Nashef</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Instructor at HTU</p>
+                <div class="ref-contact">
+                    <p><i class="fa-solid fa-envelope"></i> noura.alnashef@htu.edu.jo</p>
                     <p><i class="fa-solid fa-phone"></i> 0790099013</p>
                 </div>
             </div>
-            
-            <div class="card" style="display: flex; align-items: center; justify-content: center; background: transparent; border: 2px dashed var(--text-muted);">
-                <p style="color: var(--text-muted);">More references available upon request</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="recommendations" class="container">
-        <h2>Recommendations</h2>
-        <div class="card" style="text-align: center; padding: 40px;">
-            <i class="fa-solid fa-star highlight" style="font-size: 2rem; margin-bottom: 15px;"></i>
-            <p style="color: var(--text-muted); font-style: italic;">
-                "Waiting for your amazing recommendations content here..."
-            </p>
+            <div class="card ref-card">
+                <h4 style="margin-bottom: 5px;">Ms. Waed Alsawareah</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Assistant Instructor at HTU</p>
+                <div class="ref-contact">
+                    <p><i class="fa-solid fa-envelope"></i> Waed.Alsawareah@htu.edu.jo</p>
+                </div>
+            </div>
         </div>
     </section>
 
