@@ -10,7 +10,7 @@
         :root {
             --primary: #0a192f;
             --secondary: #64ffda;
-            --text-light: #ccd6f6;
+            --text-light: #e6f1ff;
             --text-muted: #8892b0;
             --white: #ffffff;
             --bg-card: #112240;
@@ -20,58 +20,55 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--primary); color: var(--text-light); line-height: 1.6; }
 
-        /* Typography & layout */
-        h1, h2, h3, h4 { color: var(--white); font-weight: 700; }
-        h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 20px; }
-        h2 { font-size: 2rem; margin-bottom: 40px; position: relative; display: inline-block; }
-        h2::after { content: ""; position: absolute; bottom: -10px; left: 0; width: 60px; height: 4px; background: var(--secondary); border-radius: 2px; }
+        /* Typography */
+        h1, h2, h3, h4 { color: var(--white); font-weight: 700; margin-bottom: 10px; }
+        h1 { font-size: 3rem; letter-spacing: -1px; margin-bottom: 15px; }
+        h2 { font-size: 2rem; margin-bottom: 30px; position: relative; display: inline-block; }
+        h2::after { content: ""; position: absolute; bottom: -8px; left: 0; width: 50px; height: 4px; background: var(--secondary); border-radius: 2px; }
         .highlight { color: var(--secondary); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Layout */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
         section { padding: 80px 0; }
 
         /* Navigation */
-        nav { display: flex; justify-content: flex-end; align-items: center; padding: 30px 50px; flex-wrap: wrap; gap: 20px; }
-        .nav-links a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.3s; }
+        nav { display: flex; justify-content: flex-end; align-items: center; padding: 30px 50px; flex-wrap: wrap; gap: 25px; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
 
         /* Hero */
-        .hero { min-height: 85vh; display: flex; align-items: center; }
-        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 3px solid var(--secondary); object-fit: cover; margin-bottom: 25px; box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7); }
-        .btn { display: inline-block; padding: 12px 28px; border: 2px solid var(--secondary); color: var(--secondary); text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; margin-right: 15px; margin-top: 10px; }
+        .hero { min-height: 90vh; display: flex; align-items: center; }
+        .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 4px solid var(--secondary); object-fit: cover; margin-bottom: 25px; box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7); }
+        
+        /* Buttons */
+        .btn { display: inline-block; padding: 12px 28px; border: 2px solid var(--secondary); color: var(--secondary); text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease; margin-right: 15px; margin-top: 15px; }
         .btn:hover { background: rgba(100, 255, 218, 0.1); }
 
-        /* Grids & Cards */
-        .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
+        /* Grids */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        /* Cards */
+        .card { background: var(--bg-card); padding: 35px; border-radius: 10px; transition: transform 0.3s ease; height: 100%; border-bottom: 3px solid transparent; }
+        .card:hover { transform: translateY(-7px); border-bottom-color: var(--secondary); box-shadow: 0 15px 30px -15px rgba(2,12,27,0.7); }
         
-        /* Experience Card */
-        .exp-card { background: var(--bg-card); padding: 30px; border-radius: 6px; border-left: 3px solid transparent; transition: all 0.3s ease; }
-        .exp-card:hover { transform: translateY(-7px); background: var(--bg-hover); border-left: 3px solid var(--secondary); box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7); }
-        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-        .exp-role { font-size: 1.3rem; color: var(--white); font-weight: 600; }
-        .exp-company { color: var(--secondary); font-family: monospace; font-size: 0.95rem; margin-top: 5px; display: block; }
-        .exp-date { font-size: 0.85rem; color: var(--text-muted); font-family: monospace; white-space: nowrap; }
-        .exp-icon { float: right; font-size: 1.5rem; color: rgba(100, 255, 218, 0.1); }
-
-        /* Project Card */
-        .card { background: var(--bg-card); padding: 30px; border-radius: 8px; transition: transform 0.3s ease; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-        .card:hover { transform: translateY(-7px); box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7); }
-        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
-        .tech-stack { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-        .tech-tag { font-family: monospace; font-size: 0.75rem; color: var(--secondary); background: rgba(100, 255, 218, 0.05); padding: 5px 10px; border-radius: 4px; }
-
         /* Skills Badges */
-        .skill-badge { background: var(--bg-card); color: var(--text-light); padding: 10px 20px; border-radius: 50px; font-size: 0.95rem; border: 1px solid rgba(100, 255, 218, 0.1); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; margin: 5px; }
-        .skill-badge:hover { border-color: var(--secondary); color: var(--secondary); transform: translateY(-3px); background: rgba(100, 255, 218, 0.05); }
+        .skill-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .skill-badge { background: rgba(100, 255, 218, 0.08); color: var(--secondary); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; border: 1px solid rgba(100, 255, 218, 0.1); font-family: monospace; }
+
+        /* Reference Specific */
+        .ref-card { border-left: 4px solid var(--secondary); border-bottom: none; }
+        .ref-contact { margin-top: 15px; font-size: 0.95rem; color: var(--text-muted); }
+        .ref-contact i { width: 25px; color: var(--secondary); }
 
         /* Contact */
-        .contact-item { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.2rem; color: var(--text-light); text-decoration: none; margin: 10px 0; }
+        .contact-item { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.3rem; color: var(--text-light); text-decoration: none; margin: 12px 0; transition: color 0.3s; }
         .contact-item:hover { color: var(--secondary); }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             nav { justify-content: center; }
-            .experience-grid, .grid-3 { grid-template-columns: 1fr; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -80,11 +77,10 @@
     <nav>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
-            <a href="#services">Services</a>
             <a href="#skills">Skills</a>
+            <a href="#references">References</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -95,7 +91,7 @@
             <h1>Hashem Qudah.</h1>
             <h1 style="color: var(--text-muted); font-size: 2.5rem;">Data Science & AI | Strategy & Growth</h1>
             
-            <div style="margin-top: 20px;">
+            <div style="margin-top: 25px;">
                 <p>
                     I am a Data Science undergraduate at <strong>Al Hussein Technical University (HTU)</strong>, driven by the intersection of technology and community impact. 
                     My career objective is to bridge the gap between technical data solutions and strategic business growth, leveraging AI to solve real-world problems.
@@ -116,13 +112,13 @@
 
     <section id="education" class="container">
         <h2>Education</h2>
-        <div class="exp-card">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div class="card ref-card">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
                 <div>
-                    <h3 style="color: var(--white);">Al Hussein Technical University (HTU)</h3>
-                    <p style="color: var(--secondary);">B.Sc. in Data Science & Artificial Intelligence</p>
+                    <h3>Al Hussein Technical University (HTU)</h3>
+                    <p style="color: var(--secondary); font-weight: 600;">B.Sc. in Data Science & Artificial Intelligence</p>
                 </div>
-                <span style="font-family: monospace; color: var(--text-muted);">2023 - 2027</span>
+                <span style="font-family: monospace; color: var(--text-muted); margin-top: 5px;">2023 - 2027</span>
             </div>
             <p style="margin-top: 15px; color: var(--text-muted);">
                 Focusing on Data Analysis, Machine Learning, and Strategic Implementation. Active leader in student communities (GDG, AiMinds).
@@ -132,179 +128,109 @@
 
     <section id="experience" class="container">
         <h2>Professional Experience</h2>
-        <div class="experience-grid">
+        <div class="grid-2">
             
-            <div class="exp-card">
-                <i class="fa-solid fa-crown exp-icon"></i>
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-role">CEO of Interns</div>
-                        <span class="exp-company">@ Wider Community</span>
-                    </div>
-                    <span class="exp-date">Jan 2026 - Present</span>
+            <div class="card">
+                <div style="display:flex; justify-content:space-between;">
+                    <h3 style="font-size: 1.4rem;">CEO of Interns</h3>
+                    <i class="fa-solid fa-crown highlight" style="font-size: 1.5rem;"></i>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Leading the new cohort of the Engineering Internship Program. Managing workflows for Data, Backend, and Frontend squads, and using data insights to track performance and bridge the gap between interns and leadership.
-                </p>
+                <p style="color: var(--secondary); font-family: monospace; margin-bottom: 15px;">Wider Community | Jan 2026 - Present</p>
+                <p style="color: var(--text-muted);">Leading the Engineering Internship Program. Managing Data, Backend, and Frontend squads. Using data insights to track performance and bridge the gap between interns and leadership.</p>
             </div>
 
-            <div class="exp-card">
-                <i class="fa-solid fa-chess-knight exp-icon"></i>
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-role">Head of Strategy & Growth</div>
-                        <span class="exp-company">@ AiMinds Jo.</span>
-                    </div>
-                    <span class="exp-date">Oct 2025 - Present</span>
+            <div class="card">
+                <div style="display:flex; justify-content:space-between;">
+                    <h3 style="font-size: 1.4rem;">Head of Strategy</h3>
+                    <i class="fa-solid fa-chess-knight highlight" style="font-size: 1.5rem;"></i>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Leading strategic initiatives to democratize AI knowledge. Building partnerships, managing growth strategies, and supporting hackathons to empower the local Data Science community.
-                </p>
+                <p style="color: var(--secondary); font-family: monospace; margin-bottom: 15px;">AiMinds Jo | Oct 2025 - Present</p>
+                <p style="color: var(--text-muted);">Directing strategic initiatives to democratize AI knowledge. Building partnerships and managing growth strategies for the local Data Science community.</p>
             </div>
 
-            <div class="exp-card">
-                <i class="fa-solid fa-users-gear exp-icon"></i>
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-role">Co-Lead</div>
-                        <span class="exp-company">@ GDG on Campus - HTU</span>
-                    </div>
-                    <span class="exp-date">Sep 2024 - Present</span>
+            <div class="card">
+                <div style="display:flex; justify-content:space-between;">
+                    <h3 style="font-size: 1.4rem;">Co-Lead</h3>
+                    <i class="fa-solid fa-users-gear highlight" style="font-size: 1.5rem;"></i>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Leading a dynamic team to organize tech workshops and large-scale conferences. Promoted from Event Manager after successfully managing major events like "Winterfest 2025".
-                </p>
+                <p style="color: var(--secondary); font-family: monospace; margin-bottom: 15px;">GDG on Campus - HTU</p>
+                <p style="color: var(--text-muted);">Leading a dynamic team to organize tech workshops. Promoted from Event Manager after successfully managing major events like "Winterfest 2025".</p>
             </div>
 
-            <div class="exp-card">
-                <i class="fa-solid fa-user-shield exp-icon"></i>
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-role">Exam Invigilator</div>
-                        <span class="exp-company">@ British Council</span>
-                    </div>
-                    <span class="exp-date">Apr 2025 - Present</span>
+            <div class="card">
+                <div style="display:flex; justify-content:space-between;">
+                    <h3 style="font-size: 1.4rem;">Exam Invigilator</h3>
+                    <i class="fa-solid fa-user-shield highlight" style="font-size: 1.5rem;"></i>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Ensuring fair and secure examination environments. Certified in Fraud Awareness, Child Protection, and Safety & Security.
-                </p>
+                <p style="color: var(--secondary); font-family: monospace; margin-bottom: 15px;">British Council</p>
+                <p style="color: var(--text-muted);">Ensuring fair and secure examination environments. Applying strict integrity and fraud awareness protocols.</p>
             </div>
 
         </div>
     </section>
 
     <section id="services" class="container">
-        <h2>Services & Potential Work</h2>
+        <h2>Services</h2>
         <div class="grid-3">
             <div class="card" style="text-align: center;">
-                <i class="fa-solid fa-chart-pie fa-2x highlight" style="margin-bottom: 15px;"></i>
-                <h3>Data Analysis & Strategy</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Transforming raw data into actionable business insights and strategic growth plans.</p>
+                <i class="fa-solid fa-chart-pie fa-2x highlight" style="margin-bottom: 20px;"></i>
+                <h3>Data Strategy</h3>
+                <p style="color: var(--text-muted);">Transforming raw data into actionable business insights and strategic growth plans.</p>
             </div>
             <div class="card" style="text-align: center;">
-                <i class="fa-solid fa-robot fa-2x highlight" style="margin-bottom: 15px;"></i>
-                <h3>AI Solutions Consulting</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Advising on AI implementation, automated cleaning pipelines, and predictive modeling.</p>
+                <i class="fa-solid fa-robot fa-2x highlight" style="margin-bottom: 20px;"></i>
+                <h3>AI Consulting</h3>
+                <p style="color: var(--text-muted);">Advising on AI implementation, automated cleaning pipelines, and predictive modeling.</p>
             </div>
             <div class="card" style="text-align: center;">
-                <i class="fa-solid fa-users-rectangle fa-2x highlight" style="margin-bottom: 15px;"></i>
+                <i class="fa-solid fa-chalkboard-user fa-2x highlight" style="margin-bottom: 20px;"></i>
                 <h3>Technical Training</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Conducting workshops on Python, Data Science basics, and Community Leadership.</p>
+                <p style="color: var(--text-muted);">Conducting workshops on Python, Data Science basics, and Community Leadership.</p>
             </div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2>Educational Projects</h2>
-        <div class="grid-3">
+        <h2>Featured Projects</h2>
+        <div class="grid-2">
 
             <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-mouse fa-2x highlight"></i>
-                </div>
                 <h3>Logitech Sales Optimization</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Analyzed Amazon sales data for Logitech products using <strong>Helium 10</strong>. Developed pricing strategies using <strong>Genetic Algorithms</strong> vs <strong>Linear Programming</strong> to minimize MAE and optimize inventory.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Genetic Algorithms</span>
-                    <span class="tech-tag">LSTM</span>
-                    <span class="tech-tag">Python</span>
+                <p style="color: var(--text-muted); margin: 10px 0;">Analyzed Amazon sales data using <strong>Helium 10</strong>. Developed pricing strategies using <strong>Genetic Algorithms</strong> vs <strong>Linear Programming</strong> to minimize MAE.</p>
+                <div class="skill-container">
+                    <span class="skill-badge">Genetic Algorithms</span>
+                    <span class="skill-badge">LSTM</span>
+                    <span class="skill-badge">Python</span>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header">
-                    <i class="fa-regular fa-folder fa-2x highlight"></i>
-                </div>
-                <h3>PwC AI Cleaning Tool</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Strategic planning for an AI tool to automate compliance workflows. Features <strong>Arabic NLP</strong>, ISO 27001 compliance, and integration with PwC's Aura & Halo systems.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-tag">NLP</span>
-                    <span class="tech-tag">ISO 27001</span>
-                    <span class="tech-tag">Agile</span>
+                <h3>PwC AI Cleaning Tool Plan</h3>
+                <p style="color: var(--text-muted); margin: 10px 0;">Designed a strategic plan for an AI-powered tool to reduce manual data cleaning time by 60% for PwC, integrated with Aura & Halo systems.</p>
+                <div class="skill-container">
+                    <span class="skill-badge">NLP</span>
+                    <span class="skill-badge">ISO 27001</span>
+                    <span class="skill-badge">Agile</span>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-notes-medical fa-2x highlight"></i>
-                </div>
                 <h3>H.A.I.E. Infection Prediction</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Implemented a full Data Science Lifecycle to predict hospital-acquired infections. Utilized <strong>Google Cloud</strong> and GPU acceleration for processing large healthcare datasets.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Google Cloud</span>
-                    <span class="tech-tag">SQL</span>
-                    <span class="tech-tag">Healthcare AI</span>
+                <p style="color: var(--text-muted); margin: 10px 0;">A Data Science Lifecycle project utilizing <strong>Google Cloud</strong> and GPU acceleration to predict hospital-acquired infection risks.</p>
+                <div class="skill-container">
+                    <span class="skill-badge">Google Cloud</span>
+                    <span class="skill-badge">SQL</span>
+                    <span class="skill-badge">Healthcare AI</span>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-robot fa-2x highlight"></i>
-                </div>
-                <h3>Autonomous Line-Following Robot</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Designed for HTU’s STEM Expo. A robot capable of navigating complex tracks using IR sensors and microcontroller logic. Awarded <strong>Distinction (Grade D)</strong> for technical design.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">Robotics</span>
-                    <span class="tech-tag">Embedded Systems</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-laptop-code fa-2x highlight"></i>
-                </div>
-                <h3>Data Cleansing Pipeline</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    End-to-end data cleaning project investigating technology's impact on children. Handled missing data imputation (Mode/Mean) and outlier detection using Boxplots.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">Seaborn</span>
-                    <span class="tech-tag">Data Wrangling</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa-solid fa-school fa-2x highlight"></i>
-                </div>
-                <h3>Educational Performance Analytics</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-                    Descriptive analytics on 1000 student records. Identified correlations between parental education and math scores, and gender performance gaps in reading vs. math.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Descriptive Stats</span>
-                    <span class="tech-tag">Visualization</span>
-                    <span class="tech-tag">EDA</span>
+                <h3>Autonomous Line Robot</h3>
+                <p style="color: var(--text-muted); margin: 10px 0;">Designed and programmed a robot for HTU’s STEM Expo. Awarded <strong>Distinction (Grade D)</strong> for technical excellence.</p>
+                <div class="skill-container">
+                    <span class="skill-badge">C++</span>
+                    <span class="skill-badge">Robotics</span>
+                    <span class="skill-badge">Embedded Systems</span>
                 </div>
             </div>
 
@@ -313,44 +239,68 @@
 
     <section id="skills" class="container">
         <h2>Technical Skills</h2>
-        <div style="margin-top: 30px;">
+        <div class="card">
+            <h4 style="color: var(--secondary);">Data Science & AI</h4>
+            <div class="skill-container" style="margin-bottom: 25px;">
+                <span class="skill-badge">Python (Pandas/NumPy)</span>
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Predictive Modeling</span>
+                <span class="skill-badge">AI Video Production</span>
+            </div>
+
+            <h4 style="color: var(--secondary);">Strategy & Business</h4>
+            <div class="skill-container" style="margin-bottom: 25px;">
+                <span class="skill-badge">Strategic Planning</span>
+                <span class="skill-badge">Fundraising & Pitching</span>
+                <span class="skill-badge">Storytelling</span>
+                <span class="skill-badge">Quantitative Research</span>
+            </div>
+
+            <h4 style="color: var(--secondary);">Engineering & Tools</h4>
+            <div class="skill-container">
+                <span class="skill-badge">C++ & Arduino</span>
+                <span class="skill-badge">Robotics</span>
+                <span class="skill-badge">MS Excel</span>
+                <span class="skill-badge">Canva</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="references" class="container">
+        <h2>References</h2>
+        <div class="grid-2">
+            <div class="card ref-card">
+                <h3 style="margin-bottom: 5px;">Ms. Noura AlNashef</h3>
+                <p style="color: var(--secondary); font-weight: 500;">Instructor at Al-Hussein Technical University</p>
+                <div class="ref-contact">
+                    <p style="margin-bottom: 8px;">
+                        <i class="fa-solid fa-envelope"></i> 
+                        <a href="mailto:noura.alnashef@htu.edu.jo" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-muted);">noura.alnashef@htu.edu.jo</a>
+                    </p>
+                    <p><i class="fa-solid fa-phone"></i> 0790099013</p>
+                </div>
+            </div>
             
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Data Science & AI</h4>
-            <div style="margin-bottom: 30px;">
-                <span class="skill-badge"><i class="fa-brands fa-python"></i> Python (Pandas/NumPy)</span>
-                <span class="skill-badge"><i class="fa-solid fa-brain"></i> Machine Learning</span>
-                <span class="skill-badge"><i class="fa-solid fa-database"></i> SQL</span>
-                <span class="skill-badge"><i class="fa-solid fa-chart-line"></i> Predictive Modeling</span>
-                <span class="skill-badge"><i class="fa-solid fa-video"></i> AI Video Production</span>
+            <div class="card" style="display: flex; align-items: center; justify-content: center; background: transparent; border: 2px dashed var(--text-muted);">
+                <p style="color: var(--text-muted);">More references available upon request</p>
             </div>
+        </div>
+    </section>
 
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Strategy & Business</h4>
-            <div style="margin-bottom: 30px;">
-                <span class="skill-badge"><i class="fa-solid fa-chess"></i> Strategic Planning</span>
-                <span class="skill-badge"><i class="fa-solid fa-hand-holding-dollar"></i> Fundraising & Investor Pitching</span>
-                <span class="skill-badge"><i class="fa-solid fa-bullhorn"></i> Storytelling & Pitch Decks</span>
-            </div>
-
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Engineering & Tools</h4>
-            <div style="margin-bottom: 30px;">
-                <span class="skill-badge"><i class="fa-solid fa-microchip"></i> C++ & Arduino IDE</span>
-                <span class="skill-badge"><i class="fa-solid fa-robot"></i> Robotics</span>
-                <span class="skill-badge"><i class="fa-solid fa-file-excel"></i> MS Excel</span>
-            </div>
-
-            <h4 style="color: var(--secondary); margin-bottom: 15px;">Leadership</h4>
-            <div>
-                <span class="skill-badge"><i class="fa-solid fa-users"></i> Team Leadership</span>
-                <span class="skill-badge"><i class="fa-solid fa-calendar-check"></i> Event Management</span>
-                <span class="skill-badge"><i class="fa-solid fa-lightbulb"></i> Critical Thinking</span>
-            </div>
-
+    <section id="recommendations" class="container">
+        <h2>Recommendations</h2>
+        <div class="card" style="text-align: center; padding: 40px;">
+            <i class="fa-solid fa-star highlight" style="font-size: 2rem; margin-bottom: 15px;"></i>
+            <p style="color: var(--text-muted); font-style: italic;">
+                "Waiting for your amazing recommendations content here..."
+            </p>
         </div>
     </section>
 
     <section id="contact" class="container" style="text-align: center; max-width: 600px;">
         <h2>Get In Touch</h2>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 30px;">
             <a href="mailto:hashemqud03@gmail.com" class="contact-item">
                 <i class="fa-solid fa-envelope"></i> hashemqud03@gmail.com
             </a>
