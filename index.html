@@ -31,17 +31,17 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
         section { padding: 80px 0; }
 
-        /* Navigation (Rectangular Buttons Style) */
+        /* Navigation (Rectangular Buttons) */
         nav { display: flex; justify-content: flex-end; align-items: center; padding: 30px 50px; flex-wrap: wrap; gap: 15px; }
         .nav-links a { 
             color: var(--secondary); 
             text-decoration: none; 
             font-size: 0.9rem; 
-            padding: 10px 20px; /* الحشوة لعمل المستطيل */
-            border: 1px solid var(--secondary); /* الإطار */
+            padding: 10px 20px; 
+            border: 1px solid var(--secondary); 
             border-radius: 4px; 
             transition: all 0.3s ease;
-            font-family: monospace; /* خط تقني */
+            font-family: monospace; 
         }
         .nav-links a:hover { 
             background: rgba(100, 255, 218, 0.1); 
@@ -204,7 +204,7 @@
     </section>
 
     <section id="projects" class="container">
-        <h2>Featured Projects</h2>
+        <h2>Educational Projects</h2>
         <div class="grid-2">
 
             <div class="card">
@@ -280,40 +280,8 @@
         </div>
     </section>
 
-    <section id="references" class="container">
-        <h2>References</h2>
-        <div class="grid-3">
-            <div class="card ref-card">
-                <h3 style="margin-bottom: 5px;">Ms. Noura AlNashef</h3>
-                <p style="color: var(--secondary); font-weight: 500;">Instructor at HTU</p>
-                <div class="ref-contact">
-                    <p style="margin-bottom: 8px;">
-                        <i class="fa-solid fa-envelope"></i> noura.alnashef@htu.edu.jo
-                    </p>
-                    <p><i class="fa-solid fa-phone"></i> 0790099013</p>
-                </div>
-            </div>
-
-            <div class="card ref-card">
-                <h3 style="margin-bottom: 5px;">Dr. Mariam Biltawi</h3>
-                <p style="color: var(--secondary); font-weight: 500;">Dean of Student Affairs at HTU</p>
-                <div class="ref-contact">
-                    <p><i class="fa-solid fa-envelope"></i> Mariam.Biltawi@htu.edu.jo</p>
-                </div>
-            </div>
-
-            <div class="card ref-card">
-                <h3 style="margin-bottom: 5px;">Ms. Waed Alsawareah</h3>
-                <p style="color: var(--secondary); font-weight: 500;">Assistant Instructor at HTU</p>
-                <div class="ref-contact">
-                    <p><i class="fa-solid fa-envelope"></i> Waed.Alsawareah@htu.edu.jo</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="testimonials" class="container">
-        <h2>Recommendations</h2>
+        <h2>Testimonials</h2>
         <div class="grid-2">
             
             <div class="card">
@@ -352,6 +320,23 @@
                 <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
             </div>
 
+        </div>
+    </section>
+
+    <section id="references" class="container">
+        <h2>References</h2>
+        <div style="display: flex; justify-content: center;">
+            <div class="card ref-card" style="max-width: 500px; width: 100%;">
+                <h3 style="margin-bottom: 5px;">Ms. Noura AlNashef</h3>
+                <p style="color: var(--secondary); font-weight: 500;">Instructor at Al-Hussein Technical University</p>
+                <div class="ref-contact">
+                    <p style="margin-bottom: 8px;">
+                        <i class="fa-solid fa-envelope"></i> 
+                        <a href="mailto:noura.alnashef@htu.edu.jo" style="color: inherit; text-decoration: none; border-bottom: 1px dashed var(--text-muted);">noura.alnashef@htu.edu.jo</a>
+                    </p>
+                    <p><i class="fa-solid fa-phone"></i> 0790099013</p>
+                </div>
+            </div>
         </div>
     </section>
 
