@@ -20,32 +20,25 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--primary); color: var(--text-light); line-height: 1.6; }
 
-        /* --- NEW HEADER DESIGN (Sticky & Glassmorphism) --- */
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between; /* Logo Left, Nav Right */
+            justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(10, 25, 47, 0.85); /* Semi-transparent */
-            backdrop-filter: blur(10px); /* Blur effect */
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
         }
 
-        /* Logo Style */
-        .logo-img {
-            height: 50px; /* Adjust size */
-            width: auto;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+        .logo-img { height: 50px; width: auto; cursor: pointer; transition: transform 0.3s ease; }
         .logo-img:hover { transform: scale(1.1); }
 
-        /* Nav Links Style */
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { 
             color: var(--text-light); 
@@ -56,17 +49,9 @@
             position: relative;
             transition: color 0.3s;
         }
-        
-        /* Hover Effect (Underline Animation) */
         .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+            background-color: var(--secondary); transition: width 0.3s ease;
         }
         .nav-links a:hover { color: var(--secondary); }
         .nav-links a:hover::after { width: 100%; }
@@ -80,7 +65,7 @@
         
         /* Layout */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
-        section { padding: 100px 0 80px; } /* Added top padding for fixed header */
+        section { padding: 100px 0 80px; }
 
         /* Hero */
         .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
@@ -102,16 +87,20 @@
         .skill-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .skill-badge { background: rgba(100, 255, 218, 0.08); color: var(--secondary); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; border: 1px solid rgba(100, 255, 218, 0.1); font-family: monospace; }
 
+        /* Testimonial Specific */
+        .quote-icon { color: var(--secondary); font-size: 1.5rem; margin-bottom: 15px; opacity: 0.6; }
+        .testimonial-text { font-style: italic; color: var(--text-light); margin-bottom: 20px; font-size: 0.95rem; }
+
         /* Reference Specific */
-        .ref-card { border-left: 4px solid var(--secondary); border-bottom: none; }
+        .ref-card { border-left: 4px solid var(--secondary); border-bottom: none; text-align: center; }
         .ref-contact { margin-top: 15px; font-size: 0.95rem; color: var(--text-muted); }
-        .ref-contact i { width: 25px; color: var(--secondary); }
+        .ref-contact i { color: var(--secondary); margin-right: 8px; }
 
         /* Contact */
         .contact-item { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.3rem; color: var(--text-light); text-decoration: none; margin: 12px 0; transition: color 0.3s; }
         .contact-item:hover { color: var(--secondary); }
 
-        /* Mobile Responsive */
+        /* Mobile */
         @media (max-width: 768px) {
             header { padding: 15px 20px; flex-direction: column; gap: 15px; }
             .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
@@ -124,17 +113,16 @@
 
     <header>
         <a href="#about">
-            <img src="HQL.png" alt="HQL Logo" class="logo-img">
+            <img src="HQ.png" alt="HQ Logo" class="logo-img">
         </a>
-
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#references">References</a>
-            <a href="#contact">Contact</a>
+            <a href="#rec-letters">Rec. Letters</a>
+            <a href="#reference">Reference</a>
         </div>
     </header>
 
@@ -165,7 +153,7 @@
 
     <section id="education" class="container">
         <h2>Education</h2>
-        <div class="card ref-card">
+        <div class="card ref-card" style="text-align: left;">
             <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
                 <div>
                     <h3>Al Hussein Technical University (HTU)</h3>
@@ -320,8 +308,51 @@
         </div>
     </section>
 
-    <section id="references" class="container">
-        <h2>References</h2>
+    <section id="rec-letters" class="container">
+        <h2>Recommendation Letters</h2>
+        <div class="grid-2">
+            
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">
+                    "Hashem demonstrated exceptional creativity and technical skills... He has successfully balanced his solid academic record with leadership responsibilities."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Dr. Mariam Biltawi</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Dean of Student Affairs, HTU</span>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">
+                    "Disciplined, focused, and responsible student. He has demonstrated strong leadership qualities... calm yet attentive, actively engaging in class exercises."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Ms. Noura Al-Nashef</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Instructor, HTU</span>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">
+                    "Highly dedicated student who can work both individually and in teams... showed high level of care and interest in his individual assignment."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Ms. Batool Alarmouti</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="testimonial-text">
+                    "Highly responsible and focused individual who consistently meets deadlines... stand out as a reliable and hardworking student."
+                </p>
+                <p style="color: var(--secondary); font-weight: 600;">Ms. Waed Alsawareah</p>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="reference" class="container">
+        <h2>Reference</h2>
         <div style="display: flex; justify-content: center;">
             <div class="card ref-card" style="max-width: 500px; width: 100%;">
                 <h3 style="margin-bottom: 5px;">Ms. Noura AlNashef</h3>
@@ -358,4 +389,3 @@
 
 </body>
 </html>
-
