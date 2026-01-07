@@ -23,7 +23,7 @@
         /* Typography */
         h1, h2, h3, h4 { color: var(--white); font-weight: 700; margin-bottom: 10px; }
         h1 { font-size: 3rem; letter-spacing: -1px; margin-bottom: 15px; }
-        h2 { font-size: 2rem; margin-bottom: 40px; position: relative; display: inline-block; }
+        h2 { font-size: 2rem; margin-bottom: 30px; position: relative; display: inline-block; }
         h2::after { content: ""; position: absolute; bottom: -8px; left: 0; width: 50px; height: 4px; background: var(--secondary); border-radius: 2px; }
         .highlight { color: var(--secondary); }
         
@@ -31,10 +31,22 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
         section { padding: 80px 0; }
 
-        /* Navigation */
-        nav { display: flex; justify-content: flex-end; align-items: center; padding: 30px 50px; flex-wrap: wrap; gap: 25px; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--secondary); }
+        /* Navigation (Rectangular Buttons Style) */
+        nav { display: flex; justify-content: flex-end; align-items: center; padding: 30px 50px; flex-wrap: wrap; gap: 15px; }
+        .nav-links a { 
+            color: var(--secondary); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            padding: 10px 20px; /* الحشوة لعمل المستطيل */
+            border: 1px solid var(--secondary); /* الإطار */
+            border-radius: 4px; 
+            transition: all 0.3s ease;
+            font-family: monospace; /* خط تقني */
+        }
+        .nav-links a:hover { 
+            background: rgba(100, 255, 218, 0.1); 
+            transform: translateY(-3px);
+        }
 
         /* Hero */
         .hero { min-height: 90vh; display: flex; align-items: center; }
@@ -58,9 +70,8 @@
 
         /* Reference Specific */
         .ref-card { border-left: 4px solid var(--secondary); border-bottom: none; }
-        .ref-contact { margin-top: 15px; font-size: 0.9rem; color: var(--text-muted); }
-        .ref-contact i { width: 20px; color: var(--secondary); margin-right: 5px; }
-        .quote-icon { color: var(--secondary); font-size: 1.5rem; margin-bottom: 15px; opacity: 0.5; }
+        .ref-contact { margin-top: 15px; font-size: 0.95rem; color: var(--text-muted); }
+        .ref-contact i { width: 25px; color: var(--secondary); }
 
         /* Contact */
         .contact-item { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.3rem; color: var(--text-light); text-decoration: none; margin: 12px 0; transition: color 0.3s; }
@@ -78,10 +89,11 @@
     <nav>
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#testimonials">Testimonials</a>
+            <a href="#references">References</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -192,7 +204,7 @@
     </section>
 
     <section id="projects" class="container">
-        <h2>Educational Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="grid-2">
 
             <div class="card">
@@ -268,8 +280,40 @@
         </div>
     </section>
 
+    <section id="references" class="container">
+        <h2>References</h2>
+        <div class="grid-3">
+            <div class="card ref-card">
+                <h3 style="margin-bottom: 5px;">Ms. Noura AlNashef</h3>
+                <p style="color: var(--secondary); font-weight: 500;">Instructor at HTU</p>
+                <div class="ref-contact">
+                    <p style="margin-bottom: 8px;">
+                        <i class="fa-solid fa-envelope"></i> noura.alnashef@htu.edu.jo
+                    </p>
+                    <p><i class="fa-solid fa-phone"></i> 0790099013</p>
+                </div>
+            </div>
+
+            <div class="card ref-card">
+                <h3 style="margin-bottom: 5px;">Dr. Mariam Biltawi</h3>
+                <p style="color: var(--secondary); font-weight: 500;">Dean of Student Affairs at HTU</p>
+                <div class="ref-contact">
+                    <p><i class="fa-solid fa-envelope"></i> Mariam.Biltawi@htu.edu.jo</p>
+                </div>
+            </div>
+
+            <div class="card ref-card">
+                <h3 style="margin-bottom: 5px;">Ms. Waed Alsawareah</h3>
+                <p style="color: var(--secondary); font-weight: 500;">Assistant Instructor at HTU</p>
+                <div class="ref-contact">
+                    <p><i class="fa-solid fa-envelope"></i> Waed.Alsawareah@htu.edu.jo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="testimonials" class="container">
-        <h2>Recommendations & Testimonials</h2>
+        <h2>Recommendations</h2>
         <div class="grid-2">
             
             <div class="card">
@@ -308,36 +352,6 @@
                 <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
             </div>
 
-        </div>
-    </section>
-
-    <section id="references" class="container">
-        <h2>References</h2>
-        <div class="grid-2">
-            <div class="card ref-card">
-                <h4 style="margin-bottom: 5px;">Dr. Mariam Biltawi</h4>
-                <p style="color: var(--text-light); font-size: 0.9rem;">Dean of Student Affairs at HTU</p>
-                <div class="ref-contact">
-                    <p><i class="fa-solid fa-envelope"></i> Mariam.Biltawi@htu.edu.jo</p>
-                </div>
-            </div>
-
-            <div class="card ref-card">
-                <h4 style="margin-bottom: 5px;">Ms. Noura Al-Nashef</h4>
-                <p style="color: var(--text-light); font-size: 0.9rem;">Instructor at HTU</p>
-                <div class="ref-contact">
-                    <p><i class="fa-solid fa-envelope"></i> noura.alnashef@htu.edu.jo</p>
-                    <p><i class="fa-solid fa-phone"></i> 0790099013</p>
-                </div>
-            </div>
-
-            <div class="card ref-card">
-                <h4 style="margin-bottom: 5px;">Ms. Waed Alsawareah</h4>
-                <p style="color: var(--text-light); font-size: 0.9rem;">Assistant Instructor at HTU</p>
-                <div class="ref-contact">
-                    <p><i class="fa-solid fa-envelope"></i> Waed.Alsawareah@htu.edu.jo</p>
-                </div>
-            </div>
         </div>
     </section>
 
