@@ -20,6 +20,57 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--primary); color: var(--text-light); line-height: 1.6; }
 
+        /* --- NEW HEADER DESIGN (Sticky & Glassmorphism) --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Logo Left, Nav Right */
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(10, 25, 47, 0.85); /* Semi-transparent */
+            backdrop-filter: blur(10px); /* Blur effect */
+            z-index: 1000;
+            box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
+        }
+
+        /* Logo Style */
+        .logo-img {
+            height: 50px; /* Adjust size */
+            width: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .logo-img:hover { transform: scale(1.1); }
+
+        /* Nav Links Style */
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { 
+            color: var(--text-light); 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            font-family: monospace;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        /* Hover Effect (Underline Animation) */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--secondary); }
+        .nav-links a:hover::after { width: 100%; }
+
         /* Typography */
         h1, h2, h3, h4 { color: var(--white); font-weight: 700; margin-bottom: 10px; }
         h1 { font-size: 3rem; letter-spacing: -1px; margin-bottom: 15px; }
@@ -29,27 +80,10 @@
         
         /* Layout */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
-        section { padding: 80px 0; }
-
-        /* Navigation (Rectangular Buttons) */
-        nav { display: flex; justify-content: flex-end; align-items: center; padding: 30px 50px; flex-wrap: wrap; gap: 15px; }
-        .nav-links a { 
-            color: var(--secondary); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            padding: 10px 20px; 
-            border: 1px solid var(--secondary); 
-            border-radius: 4px; 
-            transition: all 0.3s ease;
-            font-family: monospace; 
-        }
-        .nav-links a:hover { 
-            background: rgba(100, 255, 218, 0.1); 
-            transform: translateY(-3px);
-        }
+        section { padding: 100px 0 80px; } /* Added top padding for fixed header */
 
         /* Hero */
-        .hero { min-height: 90vh; display: flex; align-items: center; }
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
         .profile-img { width: 170px; height: 170px; border-radius: 50%; border: 4px solid var(--secondary); object-fit: cover; margin-bottom: 25px; box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7); }
         
         /* Buttons */
@@ -77,16 +111,22 @@
         .contact-item { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.3rem; color: var(--text-light); text-decoration: none; margin: 12px 0; transition: color 0.3s; }
         .contact-item:hover { color: var(--secondary); }
 
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
             h1 { font-size: 2.5rem; }
-            nav { justify-content: center; }
             .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
+    <header>
+        <a href="#about">
+            <img src="HQ.png" alt="HQ Logo" class="logo-img">
+        </a>
+
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#education">Education</a>
@@ -96,7 +136,7 @@
             <a href="#references">References</a>
             <a href="#contact">Contact</a>
         </div>
-    </nav>
+    </header>
 
     <section class="hero container" id="about">
         <div style="max-width: 800px;">
@@ -280,51 +320,8 @@
         </div>
     </section>
 
-    <section id="testimonials" class="container">
-        <h2>Testimonials</h2>
-        <div class="grid-2">
-            
-            <div class="card">
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
-                    "Hashem demonstrated exceptional creativity and technical skills... He has successfully balanced his solid academic record with leadership responsibilities."
-                </p>
-                <p style="color: var(--secondary); font-weight: 600;">Dr. Mariam Biltawi</p>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Dean of Student Affairs, HTU</span>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
-                    "Disciplined, focused, and responsible student. He has demonstrated strong leadership qualities... calm yet attentive, actively engaging in class exercises."
-                </p>
-                <p style="color: var(--secondary); font-weight: 600;">Ms. Noura Al-Nashef</p>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Instructor, HTU</span>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
-                    "Highly dedicated student who can work both individually and in teams... showed high level of care and interest in his individual assignment."
-                </p>
-                <p style="color: var(--secondary); font-weight: 600;">Ms. Batool Alarmouti</p>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
-            </div>
-
-            <div class="card">
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-                <p style="font-style: italic; color: var(--text-light); margin-bottom: 15px;">
-                    "Highly responsible and focused individual who consistently meets deadlines... stand out as a reliable and hardworking student."
-                </p>
-                <p style="color: var(--secondary); font-weight: 600;">Ms. Waed Alsawareah</p>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Assistant Instructor, HTU</span>
-            </div>
-
-        </div>
-    </section>
-
     <section id="references" class="container">
-        <h2>Reference</h2>
+        <h2>References</h2>
         <div style="display: flex; justify-content: center;">
             <div class="card ref-card" style="max-width: 500px; width: 100%;">
                 <h3 style="margin-bottom: 5px;">Ms. Noura AlNashef</h3>
@@ -361,4 +358,3 @@
 
 </body>
 </html>
-
